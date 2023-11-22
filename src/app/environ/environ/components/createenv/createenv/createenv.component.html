@@ -1,0 +1,55 @@
+<div class="container-fluid">
+<button type="button" class="btn btn-success boutonModal mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"><i class="bi bi-plus-lg fw-bold"></i> Enregistrer Environnement</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 fw-bold text-center text-primary" id="exampleModalLabel">Enregistrement d'un environnement</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="myFormenv">
+          <div class="row">
+            <!-- <div class="col-6">
+              <div class="mb-3">
+                <label for="code-name" class="col-form-label">Code:</label>
+                <input type="text" class="form-control" formControlName="codeEnv" id="code-name" placeholder="Entrez code environnement">
+              </div> -->
+
+            <!-- </div> -->
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="libelle-name" class="col-form-label">Libelle:</label>
+                <input type="text" class="form-control" id="libelle-text" formControlName="libelleEnv" placeholder="Entrez libellé environnement">
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" disable = "true" (click)="save()">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card-head mt-5 taille">
+
+  <form>
+    <div class="input-group">
+      <!-- <label class="input-group-text">Environnement:</label> -->
+      <input type="text" class="form-control" placeholder="recherche un environnement">
+      <button class="btn btn-info">
+        <i class="bi bi-search"></i>
+        Search
+      </button>
+    </div>
+
+  </form>
+<h2 class="fw-bold text-center text-primary mt-3">Liste des environnements</h2>
+</div>
+
+<app-listeenv></app-listeenv>
+
+</div>

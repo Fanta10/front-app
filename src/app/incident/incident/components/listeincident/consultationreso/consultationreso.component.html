@@ -1,0 +1,108 @@
+<div class="container-fluid mt-5 conteneur">
+    <div class="">
+        <div class="card-head fw-bold text-center text-primary font">
+            Consulter un mode opératoire lié à un incident:
+        </div>
+        <div class="card-body mt-4">
+
+            <form [formGroup]="myForm">
+                <div class="row">
+
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label
+                                for="liv-name"
+                                class="col-form-label"
+                            >
+                                Libellé de l'inncident:
+                            </label>
+
+                            <select
+                                class="form-select"
+                                aria-label="Default select example"
+                                formControlName="incident"
+                            >
+                                <option selected>Choisissez un incident</option>
+                                <option
+                                    value="{{rex.idInc}}"
+                                    *ngFor="let rex of mat"
+                                >
+                                    {{rex.libelleInc}}
+                                </option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+
+                        <div class="mb-3">
+                            <label
+                                for="liv-name"
+                                class="col-form-label"
+                            >
+                                Application:
+                            </label>
+
+                            <select
+                                class="form-select"
+                                aria-label="Default select example"
+                                formControlName="logiciel"
+                            >
+                                <option selected>Choisissez une application</option>
+                                <option
+                                    value="{{rex.idApp}}"
+                                    *ngFor="let rex of logiciel"
+                                >
+                                    {{rex.libelleApp}}
+                                </option>
+
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-6">
+
+                            <div class="mb-3">
+                                <label
+                                    for="liv-name"
+                                    class="col-form-label"
+                                >
+                                    Environnement:
+                                </label>
+
+                                <select
+                                    class="form-select"
+                                    aria-label="Default select example"
+                                    formControlName="environment"
+                                >
+                                    <option selected>Choisissez un environnement</option>
+                                    <option
+                                        value="{{rex.idEnv}}"
+                                        *ngFor="let rex of environment"
+                                    >
+                                        {{rex.libelleEnv}}
+                                    </option>
+
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-success"
+                    (click)="save()"
+                >
+                    Mode opératoire
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+</div>

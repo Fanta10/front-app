@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-6">
+      <div class="auth-form p-4 rounded shadow bg-success">
+        <h4 class="text-center mb-4">Connexion</h4>
+        <form [formGroup]="myForm">
+          <div class="form-group">
+            <label for="email"><strong>Email</strong></label>
+            <input type="email" class="form-control" id="email" formControlName="email" placeholder="email"
+            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+              <div *ngIf="f['email'].errors['required']">Email is required</div>
+              <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password"><strong>Password</strong></label>
+            <input type="password" class="form-control" id="password" formControlName="password" placeholder="mot de passe"
+            [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+              <div *ngIf="f['password'].errors['required']">password is required</div>
+            </div>
+          </div>
+          <div class="form-group text-center">
+            <button type="submit" (click)="auth()" class="btn btn-light btn-block mt-4">Connexion</button>
+          </div>
+          <!-- Ajoutez ici un lien pour la réinitialisation du mot de passe ou pour créer un nouveau compte si nécessaire -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

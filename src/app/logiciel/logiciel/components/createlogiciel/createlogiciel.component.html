@@ -1,0 +1,87 @@
+<div class="container-fluid">
+<button type="button" class="btn btn-success boutonModal mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"><i class="bi bi-plus-lg fw-bold"></i> Enregistrer Application</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 fw-bold text-center text-primary" id="exampleModalLabel">Enregistrement d'une application</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="myForm">
+          <div class="row">
+            <!-- <div class="col-6">
+              <div class="mb-3">
+                <label for="code-name" class="col-form-label">Code:</label>
+                <input type="text" class="form-control" formControlName="codeApp" id="code-name" placeholder="Entrez code application">
+              </div>
+
+            </div> -->
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="libelle-name" class="col-form-label">Libelle:</label>
+                <input type="text" class="form-control" id="libelle-text" formControlName="libelleApp" placeholder="Entrez libellé application">
+              </div>
+            </div>
+          <!-- </div>
+          <div class="row"> -->
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="marque-name" class="col-form-label">Description:</label>
+                <input type="text" class="form-control" id="marque-name" formControlName="descriptionApp" placeholder="Entrez description application">
+              </div>
+
+            </div>
+
+          <div class="row">
+
+            <div class="col-6">
+                <div class="mb-3">
+                  <label for="liv-name" class="col-form-label">Nom Rex:</label>
+
+                  <select class="form-select" aria-label="Default select example" formControlName="rex">
+                    <option selected>Choisissez un rex</option>
+                     <option value="{{rex.idRex}}" *ngFor="let rex of rexp">{{rex.nom}}</option>
+
+
+
+                  </select>
+                </div>
+              </div>
+          </div>
+
+
+
+
+        </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" disable = "true" (click)="save()">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card-head mt-5 taille">
+
+  <form [formGroup]="myForm" (ngSubmit)="Search()">
+    <div class="input-group">
+      <!-- <label class="input-group-text"></label> -->
+      <input type="search" formControlName="libelleApp" class="form-control " placeholder="rechercher une application">
+      <button class="btn btn-info">
+        <i class="bi bi-search"></i>
+        Search
+      </button>
+    </div>
+
+  </form>
+  <h2 class="fw-bold text-center text-primary mt-3">Liste des applications</h2>
+
+</div>
+
+<app-listelogiciel></app-listelogiciel>
+</div>

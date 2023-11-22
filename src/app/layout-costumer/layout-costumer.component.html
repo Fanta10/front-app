@@ -1,0 +1,48 @@
+<div class="container-fluid" id="SPA">
+  <div class="row">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
+      <div class="container">
+        <a class="navbar-brand text-white fw-bold" href="#">Gestion incident</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <form class="d-flex">
+            <button class="btn btn-light mx-2"  type="submit" (click)="logout()">Déconnexion</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <div class="col-lg-3 col-md-4 col-12">
+      <!-- Sidebar -->
+      <div class="sidebar fixed-left">
+
+        <a class="active fw-bold" routerLink="/dashboard"><i class="bi bi-house-door-fill fw-bold"></i> Dashboard</a>
+        <a routerLink="/logiciel" class="fw-bold"><i class="bi bi-x-diamond-fill fw-bold"></i> Application</a>
+        <a routerLink="/environnement" class="fw-bold"><i class="bi bi-star-fill fw-bold"></i> Environnement</a>
+        <a routerLink="/incident" class="fw-bold"><i class="bi bi-hammer fw-bold"></i> Incident</a>
+        <a routerLink="/rex" class="fw-bold"><i class="bi bi-person-fill fw-bold"></i> Rex</a>
+      </div>
+      <!-- End Sidebar -->
+    </div>
+
+    <div class="col-lg-9 col-md-8 col-12 mt-lg-5 mt-md-0 mt-3">
+      <!-- Content -->
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- Footer -->
+    <div class="col-12">
+      <footer class="text-center bg-warning text-white fixed-bottom">
+        <div class="mt-3">© 2023 Copyright:
+          <a class="text-reset fw-bold" routerLink="https://gnews.univers.ci/">gs2e.ci</a>
+        </div>
+      </footer>
+    </div>
+    <!-- End Footer -->
+  </div>
+</div>

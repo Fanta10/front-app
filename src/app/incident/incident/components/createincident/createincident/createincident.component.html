@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="">
+    <div class="card-head text-primary fw-bold text-center font mt-4">Enregistrer incident</div>
+    <div class="card-body">
+      <form  [formGroup]="myForm" enctype="multipart/form-data" (ngSubmit)="onSave()">
+        <div class="row">
+          <!-- <div class="col-6">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Code</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" formControlName="codeInc" aria-describedby="emailHelp" placeholder="Saisissez code incident">
+
+        </div>
+      </div> -->
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Libelle</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="libelleInc" placeholder="Saisissez libellé incident ">
+        </div>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="liv-name" class="col-form-label">Application:</label>
+
+          <select class="form-select" aria-label="Default select example" formControlName="logiciel">
+            <option selected>Choisissez une application</option>
+             <option value="{{rex.idApp}}" *ngFor="let rex of logiciel">{{rex.libelleApp}}</option>
+
+
+
+          </select>
+        </div>
+      </div>
+      <div class="col-6">
+
+        <div class="mb-3">
+          <label for="liv-name" class="col-form-label">Environnement:</label>
+
+          <select class="form-select" aria-label="Default select example" formControlName="environnement">
+            <option selected>Choisissez un environnement</option>
+             <option value="{{rex.idEnv}}" *ngFor="let rex of environment">{{rex.libelleEnv}}</option>
+
+
+
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- <div class="col-6">
+        <div class="mb-3">
+          <div class="form-floating">
+            <textarea type="text" class="form-control" placeholder="Leave a comment here" id="floatingTextarea" formControlName="resolution"></textarea>
+            <label for="floatingTextarea">Mode opératoire</label>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="col-6">
+        <div class="mb-3">
+
+            <label for="floatingTextarea">Mode opératoire:</label>
+            <input type="file" (change)="onFileSelected($event)" class="form-control" id="floatingTextarea" formControlName="resolution">
+
+
+        </div>
+      </div>
+      </div>
+
+
+        <button type="submit" class="btn btn-success" [disabled]="!myForm.valid"><i class="bi bi-plus-lg fw-bold"></i> Enregistrer</button>
+      </form>
+
+    </div>
+  </div>
+
+</div>
